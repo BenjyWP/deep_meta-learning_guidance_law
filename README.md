@@ -4,7 +4,7 @@
 
 
 This work aims at implementing Model Predictive Path Integral controller for the guidance problem as described in our paper
-**Learing to guide: Guidance Law Based on Deep Meta-learning and Model Predictive Path Integral Control.**
+**Learning to Guide: Guidance Law Based on Deep Meta-learning and Model Predictive Path Integral Control.**
 This IEEE Access paper is open access at https://ieeexplore.ieee.org/document/8682051 and also available on arXiv
 
 
