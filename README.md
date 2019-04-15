@@ -34,12 +34,19 @@ URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8682051&isnumber=65
 ### File list
 
 cost_functions.py       : define the cost function of MPPI controller.
+
 neural_dynamics_dense.py: The neural network dynamic model with meta-learning online adaption built in.
+
 get_Monte.m             : A simple MATLAB file to collect Monte Carlo simulation results.
+
 inner_loop.py           : A look at the inner-loop dynamics in semi-physical simulation which is not included in this code set.
+
 mppi_controller.py      : MPPI controller
+
 mppi_run.py             : main file for simulation
+
 monte_carlo_simu.sh     : Monte Carlo simulation
+
 missile_env.py          : Guidance Environment
 
 
