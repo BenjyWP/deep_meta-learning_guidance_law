@@ -18,7 +18,7 @@ This demonstrative run is built on the pre-trained guidance neural network model
 Please use `mppi_run.py` to run.
 
 Run can also be done using `monte_carlo_simu.sh` to do iteratively runs to get Monte Carlo sampling results. In the paper the results
-of Monte Carlo simulation are collected using a m file of MATLAB.
+of Monte Carlo simulation are collected using the get_Monte.m file of MATLAB.
 
 ## Citing
 
