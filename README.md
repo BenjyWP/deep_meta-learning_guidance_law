@@ -11,7 +11,7 @@ This IEEE Access paper is open access at https://ieeexplore.ieee.org/document/86
 ### Dependencies
 
 This code has been tested on python and requires tensorflow-gpu & numpy installed.
-This demonstrative run is built on the pre-trained guidance neural network model, the code, system model and training dataset of which will be posted if anybody asks.
+This demonstrative run is built on the pre-trained guidance neural network model, the code, system model and training dataset of which will be posted afterwards if anybody asks.
 
 ### How to Run
 
