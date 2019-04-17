@@ -3,7 +3,7 @@
 ### About
 
 
-This work aims at implementing Model-based Deep Reinforcement Learning with Model Predictive Path Integral controller for the **missile** guidance problem as described in our paper
+This work aims at implementing Model-based Deep Reinforcement Learning with Model Predictive Path Integral controller for the **missile guidance** problem as described in our paper
 **Learning to Guide: Guidance Law Based on Deep Meta-learning and Model Predictive Path Integral Control.**
 This IEEE Access paper is open access at https://ieeexplore.ieee.org/document/8682051 and also available on arXiv at https://arxiv.org/abs/1904.06892
 
