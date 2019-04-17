@@ -19,18 +19,13 @@ class InnerloopDyna():
         self.ur_st = [0.0]
         self.Q_d_st = [0.0]
         self.R_d_st = [0.0]
-
         self.plot_every = 60
-
         self.amy_st = [0.0]
         self.amz_st = [0.0]
         self.curr_amy_st = [0.0]
         self.curr_amz_st = [0.0]
-
         self.time = 0.0
-
         self.m = 500.0
-
         self.Ixx = 1.6151
         self.Iyy = 136.2648
         self.Izz = 136.2648
@@ -54,9 +49,7 @@ class InnerloopDyna():
         self.c_l_a = 10.52
         self.rho = 1.225
         self.Vm = 500
-
         self.rho_sm = 0.9
-
         self.h = 0.001
         self.dot_alpha = 0.0
         self.dot_beta = 0.0
@@ -109,13 +102,9 @@ class InnerloopDyna():
 
         self.fig = plt.figure()
         self.ax = self.fig.add_subplot(121)
-
         self.ax2 = self.fig.add_subplot(122)
-
         self.line, = self.ax.plot(np.array(self.time_st), np.array(self.amy_st), 'r-')
         self.linet, = self.ax.plot(np.array(self.time_st), np.array(self.curr_amy_st), 'b-')
-
-
         self.line2, = self.ax2.plot(np.array(self.time_st), np.array(self.amz_st), 'r-')
         self.line2t, = self.ax2.plot(np.array(self.time_st), np.array(self.curr_amz_st), 'b-')
 
@@ -155,12 +144,10 @@ class InnerloopDyna():
 
         self.h = h
         self.time = self.time + self.h
-
         self.step = self.step + 1
 
         self.alpha_d = amz * self.m / self.k_F_z
         self.beta_d = amy * self.m / self.k_F_y
-
 
         F1_alpha = self.k_f * self.rho * self.Vm * self.c_z_alpha * self.alpha * np.cos(self.alpha) / (self.m * np.cos(self.beta))
         G1_alpha = - self.P * np.cos(self.alpha) * np.tan(self.beta) + self.Q - self.R * np.sin(self.alpha) * np.tan(self.beta)
@@ -173,12 +160,6 @@ class InnerloopDyna():
         G1_beta = self.P * np.sin(self.alpha) - self.R * np.cos(self.alpha)
         dot_beta = F1_beta + G1_beta
         self.beta = self.beta + dot_beta * self.h
-
-
-
-
-
-
 
         G1 = np.array([[1, -np.sin(self.alpha) * np.tan(self.beta)],[0.0, - np.cos(self.alpha)]])
         G1_mat_inv = np.mat(G1).I
@@ -196,23 +177,16 @@ class InnerloopDyna():
 
         for i in range(10):
             p = u_qr - self.u_qr_c
-
             dot_miu_p = np.array(np.mat(self.k_p_1) * np.mat(np.power(np.abs(p), self.rho_p1 + 1)))
             self.miu_p = self.miu_p + dot_miu_p * self.h / 10.0
             diag_sig_p =np.array([[self.sig(p[0], self.rho_p1)[0], 0.0],[0.0, self.sig(p[1], self.rho_p1)[0]]])
             self.dot_u_qr_c = -self.u_qr_c + u_qr - self.tao_p * np.array(np.mat(self.k_p_1) * np.mat(diag_sig_p) * np.mat(self.miu_p)) - self.tao_p * np.array(np.mat(self.k_p_2) * np.mat(self.sig(
                 p, self.rho_p2)))
-
             self.dot_u_qr_c = self.dot_u_qr_c/ self.tao_p
-
             self.u_qr_c = self.u_qr_c + self.dot_u_qr_c * self.h / 10.0
 
         self.Q_d = self.u_qr_c[0][0]
         self.R_d = self.u_qr_c[1][0]
-
-
-
-
 
         self.P = 0.0
         F2_Q = (-(self.Ixx - self.Izz) * self.P * self.R) / self.Iyy
@@ -232,21 +206,14 @@ class InnerloopDyna():
         u_r = max(u_r, -0.697)
         u_r = min(u_r, 0.697)
 
-
-
         dot_Q = (-(self.Ixx - self.Izz) * self.P * self.R + self.k_m * self.rho * self.Vm * self.Vm * self.c_m_e * u_e) / self.Iyy
         dot_R = (-(
                 self.Iyy - self.Ixx) * self.P * self.Q + self.k_m * self.rho * self.Vm * self.Vm * self.c_n_beta * self.beta + self.k_m * self.rho * self.Vm * self.Vm * self.c_n_r * u_r) / self.Izz
         self.Q = self.Q + dot_Q * self.h
         self.R = self.R + dot_R * self.h
 
-
-
-
         self.curr_amy = self.beta * self.k_F_y / self.m
         self.curr_amz = self.alpha * self.k_F_z / self.m
-
-
 
         if self.step % self.plot_every == 0:
             self.time_st.append(self.time)
