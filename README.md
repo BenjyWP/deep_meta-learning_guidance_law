@@ -4,7 +4,7 @@
 
 
 This work aims at implementing Model-based Deep Reinforcement Learning with Model Predictive Path Integral controller for the **missile guidance** problem as described in our paper
-**Learning to Guide: Guidance Law Based on Deep Meta-learning and Model Predictive Path Integral Control.**
+[Learning to Guide: Guidance Law Based on Deep Meta-learning and Model Predictive Path Integral Control](https://ieeexplore.ieee.org/document/8682051)
 This IEEE Access paper is open access at https://ieeexplore.ieee.org/document/8682051 and also available on arXiv at https://arxiv.org/abs/1904.06892
 
 
@@ -26,9 +26,15 @@ If you find our works useful in your research, please consider citing:
 
 ```
 
-C. Liang, W. Wang, Z. Liu, C. Lai and B. Zhou, "Learning to Guide: Guidance Law Based on Deep Meta-learning and Model Predictive Path Integral Control," in IEEE Access.
-doi: 10.1109/ACCESS.2019.2909579
-URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8682051&isnumber=6514899
+@article{liang2019learning,
+  title={Learning to Guide: Guidance Law Based on Deep Meta-Learning and Model Predictive Path Integral Control},
+  author={Liang, Chen and Wang, Weihong and Liu, Zhenghua and Lai, Chao and Zhou, Benchun},
+  journal={IEEE Access},
+  volume={7},
+  pages={47353--47365},
+  year={2019},
+  publisher={IEEE}
+}
 ```
 
 ### File list
